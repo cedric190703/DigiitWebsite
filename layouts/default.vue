@@ -54,7 +54,7 @@ export default {
     return {
       clipped: false,
       drawer: false,
-      fixed: false,
+      fixed: true,
       items: [
         {
           icon: 'mdi-home',
@@ -64,7 +64,17 @@ export default {
         {
           icon: 'mdi-account-group',
           title: 'Team',
-          to: '/inspire'
+          to: '/team'
+        },
+        {
+          icon: 'mdi-application-parentheses',
+          title: 'Screens',
+          to: '/functionnalities'
+        },
+        {
+          icon: 'mdi-download-circle',
+          title: 'Download',
+          to: '/download'
         }
       ],
       title: 'Digiit'
