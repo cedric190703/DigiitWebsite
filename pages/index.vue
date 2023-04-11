@@ -1,17 +1,11 @@
 <template>
   <div class="slider-container">
-    <v-carousel hide-controls>
-      <v-carousel-item v-for="(item,i) in sliderItems" :key="i">
+    <v-carousel>
+      <v-carousel-item v-for="(item, index) in sliderItems" :key="index">
         <div class="slider-item">
-          <lottie-player
-            :src="item.animationUrl"
-            background="transparent"
-            speed="1"
-            style="width: 88%; height: 88%;"
-            loop
-            autoplay
-            class="lottie-player"
-          ></lottie-player>
+          <lottie-animation
+              :path="item.animationUrl"
+          />
           <div class="slider-text">
             <h2>{{ item.title }}</h2>
           </div>
@@ -53,28 +47,33 @@
 </template>
 
 <script>
+import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+
 export default {
+  components: {
+      LottieAnimation
+  },
   data() {
     return {
       sliderItems: [
         {
-          animationUrl: 'https://assets6.lottiefiles.com/packages/lf20_fasueuv1.json',
+          animationUrl: 'documents.json',
           title: 'Centralization of documents',
         },
         {
-          animationUrl: 'https://assets8.lottiefiles.com/packages/lf20_0zv8teye.json',
+          animationUrl: 'photo.json',
           title: 'Capturing a new document',
         },
         {
-          animationUrl: 'https://assets6.lottiefiles.com/packages/lf20_l5o1uey5.json',
+          animationUrl: 'budget.json',
           title: 'Budget monitoring',
         },
         {
-          animationUrl: 'https://assets1.lottiefiles.com/packages/lf20_2MeppDAfjJ.json',
+          animationUrl: 'balance.json',
           title: 'Balance sheet according to periods',
         },
         {
-          animationUrl: 'https://assets10.lottiefiles.com/packages/lf20_FhjHlmN3eS.json',
+          animationUrl: 'evaluation.json',
           title: 'Evaluation of documents',
         },
       ],
